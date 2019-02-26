@@ -6,13 +6,23 @@ int plus(int a,int c)
 int multiply(int a, int c) 
 { printf("the value is %3d\n",a*c);}
 int divided(int a, int c) 
-{ printf("the value is %3f\n",(float)a/c); }
-int (* show_type_attributes(char color) )(int,int)
-{   
-    if (color == '+')return plus;
-   else if (color == '-') return minus;
-   else if (color == '*') return multiply;       
-   else if (color == '/') return divided;
+{ printf("the value is %6f\n",(float)a/c); }
+int (* show_type_attributes(char type) )(int,int)
+{ 
+    int n[4];
+    n['+'] = 0;
+    n['-'] = 1;
+    n['*'] = 2;
+    n['/'] = 3;
+   
+
+
+    int (*pFun[4])(int,int) = {plus , minus ,multiply ,divided};
+
+   if (type == '+')return *pFun[n['+']];
+   else if (type == '-') return *pFun[n['-']];
+   else if (type == '*') return *pFun[n['*']];       
+   else if (type == '/') return *pFun[n['/']];
 }
 //main() function
 int main()
