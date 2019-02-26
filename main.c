@@ -1,12 +1,24 @@
 #include <stdio.h>
 int minus(int a,int c)
-{printf("the value is %3d\n",a-c);}
+{
+    printf("the value is %3d\n",a-c);
+   return 0;
+}
 int plus(int a,int c)
-{printf("the value is %3d\n",a+c);}
+{
+    printf("the value is %3d\n",a+c);
+    return 0;
+}
 int multiply(int a, int c) 
-{ printf("the value is %3d\n",a*c);}
+{
+     printf("the value is %3d\n",a*c);
+return 0;     
+}
 int divided(int a, int c) 
-{ printf("the value is %6f\n",(float)a/c); }
+{ 
+    printf("the value is %6f\n",(float)a/c);
+return 0;
+ }
 int (* show_type_attributes(char type) )(int,int)
 { 
     int n[4];
@@ -23,6 +35,7 @@ int (* show_type_attributes(char type) )(int,int)
    else if (type == '-') return *pFun[n['-']];
    else if (type == '*') return *pFun[n['*']];       
    else if (type == '/') return *pFun[n['/']];
+   else return 0;
 }
 //main() function
 int main()
