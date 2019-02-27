@@ -1,18 +1,12 @@
-CFLAGS = -O0 -Wall -Werror -g
+CC = gcc
+CFLAGS = -Wall -std=c11
 
-# Control the build verbosity                                                   
-ifeq ("$(VERBOSE)","1")
-    Q :=
-    VECHO = @true
-else
-    Q := @
-    VECHO = @printf
-endif
-all: main
+all: main.elf
+
+main.elf: main.c
+	$(CC) $(CFLAGS) main.c -o main.elf
 test : main.c
 	gcc  main.c -o main 
 	./main
-clean	:
-	rm -f *.o	main
-	rm -f *.exe	main
-.PHONY: all clean
+clean:
+	rm -f *.o *.elf

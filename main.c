@@ -23,7 +23,7 @@ int (* show_type_attributes(char type) )(int,int)
     n['*'] = 2;
     n['/'] = 3;
    int (*pFun[4])(int,int) = {plus , minus ,multiply ,divided};
-  return *pFun[n[type]];
+  return *pFun[n[(unsigned int)type]];
 
 }
 //main() function
