@@ -10,7 +10,7 @@ else
 endif
 all: main
 test : main.c
-	gcc -Wall main.c -o main -lm
+	gcc  main.c -o main 
 	./main
 clean	:
 	rm -f *.o	main
