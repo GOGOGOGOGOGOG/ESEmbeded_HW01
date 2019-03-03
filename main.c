@@ -35,7 +35,7 @@ int main()
 	scanf("%i %c %i", &a, &b, &c); 
     int (*f)(int,int);  // Declare a pointer to a function with two paramete
     f = show_type_attributes(b); // f will take the return     
-    d=f(a,c);  // Call function that was returned by show_car_attributes()
+    d=f(a,c);  
     printf("the value is %d\n\r",d);
     return 0;
 }
